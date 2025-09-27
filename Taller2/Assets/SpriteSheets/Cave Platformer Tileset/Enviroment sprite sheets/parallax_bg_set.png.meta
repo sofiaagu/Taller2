@@ -148,7 +148,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: loopable_backgrounds_0
+      name: parallax_bg_set_0
       rect:
         serializedVersion: 2
         x: 0
@@ -161,120 +161,120 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 02305410000000000800000000000000
-      internalID: 21300000
+      spriteID: f887fd555d598fb47af4fc2844a12ef4
+      internalID: 1942986145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: loopable_backgrounds_1
+      name: parallax_bg_set_1
       rect:
         serializedVersion: 2
         x: 0
         y: 576
         width: 704
-        height: 144
+        height: 142
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 22305410000000000800000000000000
-      internalID: 21300002
+      spriteID: f1868b53a591cee4d9487bfc8333a707
+      internalID: -2052676176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: loopable_backgrounds_2
+      name: parallax_bg_set_2
       rect:
         serializedVersion: 2
         x: 0
         y: 432
         width: 704
-        height: 144
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 42305410000000000800000000000000
-      internalID: 21300004
+      spriteID: 390a686e42a40294cbf66890236196d3
+      internalID: -1482401603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: loopable_backgrounds_3
+      name: parallax_bg_set_3
       rect:
         serializedVersion: 2
         x: 0
         y: 288
         width: 704
-        height: 144
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 62305410000000000800000000000000
-      internalID: 21300006
+      spriteID: 2e21bdfe38207044da629bd90571d0a7
+      internalID: -858268744
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: loopable_backgrounds_4
+      name: parallax_bg_set_4
       rect:
         serializedVersion: 2
         x: 0
         y: 144
         width: 704
-        height: 144
+        height: 109
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 82305410000000000800000000000000
-      internalID: 21300008
+      spriteID: 5ba16016cc6c33449b1b70daa52cf874
+      internalID: -2015677766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: loopable_backgrounds_5
+      name: parallax_bg_set_5
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 704
-        height: 144
+        height: 109
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a2305410000000000800000000000000
-      internalID: 21300010
+      spriteID: 9cd3a62db2437a54f81d6d7880308015
+      internalID: 1394560893
       vertices: []
       indices: 
       edges: []
@@ -283,7 +283,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 95dff78a2a7d211458c9b66a6ab415d0
     internalID: 0
     vertices: []
     indices: 
@@ -293,12 +293,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      loopable_backgrounds_0: 21300000
-      loopable_backgrounds_1: 21300002
-      loopable_backgrounds_2: 21300004
-      loopable_backgrounds_3: 21300006
-      loopable_backgrounds_4: 21300008
-      loopable_backgrounds_5: 21300010
+      parallax_bg_set_0: 1942986145
+      parallax_bg_set_1: -2052676176
+      parallax_bg_set_2: -1482401603
+      parallax_bg_set_3: -858268744
+      parallax_bg_set_4: -2015677766
+      parallax_bg_set_5: 1394560893
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
