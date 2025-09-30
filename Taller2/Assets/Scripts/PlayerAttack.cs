@@ -22,12 +22,12 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         // Si el jugador está tocando un escorpión y presiona la tecla
-        if (other.CompareTag("Scorpion") && Input.GetKeyDown(attackKey))
+        if (collision.gameObject.CompareTag("Scorpion") && Input.GetKeyDown(attackKey))
         {
-            Destroy(other.gameObject, 0.5f); // Destruye el escorpión después de la animación
+            Destroy(collision.gameObject, 0.5f); // Destruye el escorpión después de la animación
             isAttacking = false;
         }
     }
