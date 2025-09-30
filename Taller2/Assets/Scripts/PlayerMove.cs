@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -12,10 +13,25 @@ public class PlayerMove : MonoBehaviour
 
     private bool isJumping = false;
 
+    public int maxHealth = 5;
+    private int currentHealth;
+
+    public float invulnerableTime = 1f; // segundos de invulnerabilidad tras recibir daño
+    private bool invulnerable = false;
+
+    // Opcional: fuerza de retroceso cuando recibes daño
+    public float defaultKnockbackForce = 3f;
+
+    // Referencia al SpriteRenderer para parpadeo visual
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
         _Rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        currentHealth = maxHealth;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -51,4 +67,82 @@ public class PlayerMove : MonoBehaviour
             animator.SetBool("isJumping", false);
         }
     }
+    public void TakeDamage(int amount, Vector2 knockbackDirection, float knockbackForce = -1f)
+    {
+        if (invulnerable) return;
+
+        if (knockbackForce <= 0f) knockbackForce = defaultKnockbackForce;
+
+        currentHealth -= amount;
+        if (currentHealth < 0) currentHealth = 0;
+
+        // Animación/feedback
+        if (animator != null)
+        {
+            animator.SetBool("isHurt", true);
+            Invoke("ResetHurt", 0.3f); // 0.3 segundos = duración de la animación Hurt
+        }
+
+
+        // Aplicar knockback
+        if (_Rigidbody2D != null)
+        {
+            // asegurar que el vector no sea cero
+            if (knockbackDirection.sqrMagnitude == 0f) knockbackDirection = Vector2.up;
+            _Rigidbody2D.AddForce(knockbackDirection.normalized * knockbackForce, ForceMode2D.Impulse);
+        }
+
+        // Iniciar invulnerabilidad temporal y parpadeo visual
+        StartCoroutine(InvulnerableRoutine());
+
+        // Revisar muerte
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private IEnumerator InvulnerableRoutine()
+    {
+        invulnerable = true;
+        float t = 0f;
+        float flashInterval = 0.12f;
+
+        while (t < invulnerableTime)
+        {
+            if (spriteRenderer != null)
+                spriteRenderer.enabled = !spriteRenderer.enabled;
+
+            yield return new WaitForSeconds(flashInterval);
+            t += flashInterval;
+        }
+
+        // asegurar visible
+        if (spriteRenderer != null) spriteRenderer.enabled = true;
+        invulnerable = false;
+    }
+
+    private void Die()
+    {
+        // Aquí defines qué pasa al morir (respawn, reiniciar escena, anim de muerte...)
+        Debug.Log("Player muerto");
+        if (animator != null) animator.SetTrigger("die");
+        // ejemplo: desactivar controles
+        this.enabled = false;
+        // podrías añadir SceneManager.LoadScene(...) si quieres reiniciar
+    }
+
+    // Método opcional público para curar
+    public void Heal(int amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+    }
+    private void ResetHurt()
+    {
+        if (animator != null)
+            animator.SetBool("isHurt", false);
+    }
+    // Método para consultar vida (útil para UI)
+    public int GetCurrentHealth() { return currentHealth; }
 }
