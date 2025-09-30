@@ -3,8 +3,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private float globalTime;
-    private int scoreApple = 0;
-    private int scoreBanana = 0;
+    private int scoreLlave = 0;
+    private int scoreCoin = 0;
+    private int scoreVida = 0;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -28,16 +30,23 @@ public class GameManager : MonoBehaviour
     {
         globalTime += timeScene;
     }
-    public void TotalApple(int apple)
+    public void TotalLlave(int llave)
     {
-        scoreApple += apple;
+        scoreLlave += llave;
 
     }
-    public void TotalBanana(int banana)
+    public void TotalCoin(int Coin)
     {
-        scoreBanana += banana; // Corregido: era ScoreBanana (mayúscula)
+        scoreCoin += Coin; 
     }
+    public void TotalVida(int Vida)
+    {
+        scoreVida += Vida;
+    }
+
     public float GlobalTime { get => globalTime; set => globalTime = value; }
-    public int ScoreApple { get => scoreApple; set => scoreApple = value; }
-    public int ScoreBanana { get => scoreBanana; set => scoreBanana = value; }
+    public int ScoreLlave { get => scoreLlave; set => scoreLlave = value; }
+    public int ScoreCoin { get => scoreCoin; set => scoreCoin = value; }
+    public int ScoreVida { get => scoreVida; set => scoreVida = value; }
+
 }
