@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      character_berie_idle_4_0: 7735882936769272736
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
