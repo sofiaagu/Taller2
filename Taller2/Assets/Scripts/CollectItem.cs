@@ -16,13 +16,13 @@ public class CollectItem : MonoBehaviour
             {
                 GameManager.Instance.TotalCoin(itemValue);
             }
-            else if (nameItem == "llave")
+            else if (nameItem == "Coin2")
             {
-                GameManager.Instance.TotalLlave(itemValue);
+                GameManager.Instance.TotalCoin2(itemValue);
             }
-            else if (nameItem == "vida")
+            else if (nameItem == "Coin3")
             {
-                GameManager.Instance.TotalVida(itemValue);
+                GameManager.Instance.TotalCoin3(itemValue);
             }
             if (itemSound != null)
             {
