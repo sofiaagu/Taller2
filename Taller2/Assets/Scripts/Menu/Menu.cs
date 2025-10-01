@@ -1,30 +1,52 @@
-using System;
+ï»¿using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Video;   // Necesario para VideoPlayer
 
 public class Menu : MonoBehaviour
 {
-
     [Header("Panel de Instrucciones")]
-    public GameObject panelInstrucciones;   // Panel que contendrá imágenes y textos
-    public Image[] imagenes;                // Opcional: asigna imágenes en el inspector
-    public TextMeshProUGUI[] textos;        // Opcional: asigna textos en el inspector
+    public GameObject panelInstrucciones;
+    public Image[] imagenes;
+    public TextMeshProUGUI[] textos;
 
     private bool panelActivo = false;
+
+    [Header("Video de inicio")]
+    public GameObject panelVideo;      // Canvas con el RawImage del video
+    public VideoPlayer videoPlayer;    // Asigna el VideoPlayer en el inspector
+
     public void inicio()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
+        StartCoroutine(ReproducirVideoYIniciar());
     }
 
-     public void salir()
+    private IEnumerator ReproducirVideoYIniciar()
+    {
+        // Activamos el panel del video
+        panelVideo.SetActive(true);
+
+        // Reproducimos el video
+        videoPlayer.Play();
+
+        // Esperamos a que termine el video
+        while (videoPlayer.isPlaying)
+        {
+            yield return null;
+        }
+
+        // Cargamos la escena del juego
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void salir()
     {
         Debug.Log("Saliendo del juego");
-        Application.Quit(); 
+        Application.Quit();
     }
 
-    // Método para mostrar/ocultar instrucciones
     public void instrucciones()
     {
         panelActivo = !panelActivo;
@@ -34,16 +56,15 @@ public class Menu : MonoBehaviour
 
         if (panelActivo)
         {
-            // Ejemplo: actualizar textos dinámicamente
             if (textos.Length > 0) textos[0].text = "Usa las flechas para moverte";
             if (textos.Length > 1) textos[1].text = "Presiona ESPACIO para saltar";
             if (textos.Length > 2) textos[2].text = "Recolecta objetos para sumar puntos";
         }
     }
-        public void CerrarInstrucciones()
+
+    public void CerrarInstrucciones()
     {
         if (panelInstrucciones != null)
             panelInstrucciones.SetActive(false);
     }
 }
-
