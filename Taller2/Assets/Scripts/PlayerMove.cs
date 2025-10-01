@@ -71,8 +71,9 @@ public class PlayerMove : MonoBehaviour
     {
         if (invulnerable) return;
 
-        if (knockbackForce <= 0f) knockbackForce = defaultKnockbackForce;
+        GameManager.Instance.QuitarVida(amount);
 
+        if (knockbackForce <= 0f) knockbackForce = defaultKnockbackForce;
         currentHealth -= amount;
         if (currentHealth < 0) currentHealth = 0;
 
