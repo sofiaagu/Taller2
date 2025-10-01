@@ -9,6 +9,7 @@ TagManager:
   - Fondo1
   - Coin
   - Coin2
+  - Coin3
   layers:
   - Default
   - TransparentFX
