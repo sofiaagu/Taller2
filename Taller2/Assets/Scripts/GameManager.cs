@@ -3,9 +3,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private float globalTime;
+    private int scoreLlave = 0;
     private int scoreCoin = 0;
-    private int scoreCoin2 = 0;
-    private int scoreCoin3 = 0;
+    private int scoreVida = 0;
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -29,22 +30,23 @@ public class GameManager : MonoBehaviour
     {
         globalTime += timeScene;
     }
-    public void TotalCoin(int coin)
+    public void TotalLlave(int llave)
     {
-        scoreCoin += coin;
+        scoreLlave += llave;
 
     }
-    public void TotalCoin2(int coin2)
+    public void TotalCoin(int Coin)
     {
-        scoreCoin2 += scoreCoin2;
+        scoreCoin += Coin; 
+    }
+    public void TotalVida(int Vida)
+    {
+        scoreVida += Vida;
     }
 
-    public void TotalCoin3(int coin3)
-    {
-        scoreCoin3 += scoreCoin3;
-    }
     public float GlobalTime { get => globalTime; set => globalTime = value; }
+    public int ScoreLlave { get => scoreLlave; set => scoreLlave = value; }
     public int ScoreCoin { get => scoreCoin; set => scoreCoin = value; }
-    public int ScoreCoin2 { get => scoreCoin2; set => scoreCoin2 = value; }
-    public int ScoreCoin3 { get => scoreCoin3; set => scoreCoin3 = value; }
+    public int ScoreVida { get => scoreVida; set => scoreVida = value; }
+
 }
