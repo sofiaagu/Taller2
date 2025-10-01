@@ -145,4 +145,6 @@ public class PlayerMove : MonoBehaviour
     }
     // Método para consultar vida (útil para UI)
     public int GetCurrentHealth() { return currentHealth; }
+
+  
 }
