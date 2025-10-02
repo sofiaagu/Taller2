@@ -10,6 +10,7 @@ TagManager:
   - Coin
   - Coin2
   - Coin3
+  - Lava
   layers:
   - Default
   - TransparentFX
