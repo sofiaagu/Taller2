@@ -119,18 +119,19 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        if (gameOverPanel == null)
+        // Buscar el controlador del panel en la escena actual
+        PlayerDeathPanel panelController = FindFirstObjectByType<PlayerDeathPanel>();
+
+        if (panelController != null)
         {
-            // Instanciar dentro del Canvas
-            Canvas canvas = FindFirstObjectByType<Canvas>();
-            if (canvas != null && gameOverPrefab != null)
-            {
-                gameOverPanel = Instantiate(gameOverPrefab, canvas.transform);
-            }
+            panelController.OnPlayerDeath();
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró PlayerDeathPanel en la escena.");
         }
 
-        gameOverPanel.SetActive(true);
-        Time.timeScale = 0f;
+        Time.timeScale = 0f; // Pausar juego
     }
 
     private void CrearHeartsUI()
