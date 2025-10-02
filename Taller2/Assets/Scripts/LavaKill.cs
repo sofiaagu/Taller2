@@ -1,14 +1,23 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LavaKill : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Verificar que el que toca sea Player Y que este objeto sea Lava
-        if (collision.CompareTag("Player") && this.CompareTag("Lava"))
+        if (!collision.CompareTag("Player")) return;
+
+        // Lava normal → quita 1 vida
+        if (this.CompareTag("Lava"))
         {
-            Debug.Log("Player muri� en la lava!");
-            Destroy(collision.gameObject);
+            Debug.Log("Player tocó Lava normal → pierde 1 vida");
+            GameManager.Instance.QuitarVida(1);
+        }
+
+        // PisoLava → pierde toda la vida
+        if (this.CompareTag("PisoLava"))
+        {
+            Debug.Log("Player cayó en PisoLava → pierde todas las vidas");
+            GameManager.Instance.QuitarVida(GameManager.Instance.currentHealth);
         }
     }
 }
