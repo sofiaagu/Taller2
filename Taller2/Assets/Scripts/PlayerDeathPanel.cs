@@ -1,9 +1,9 @@
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerDeathPanel : MonoBehaviour
 {
     public GameObject deathPanel; // Asigna el panel desde el inspector
-
     private bool isDead = false;
 
     void Start()
@@ -14,14 +14,28 @@ public class PlayerDeathPanel : MonoBehaviour
         }
     }
 
-    // Este m�todo puede ser llamado cuando la salud del jugador llega a 0
+    // 🔹 Llamar este método cuando la vida del jugador llegue a 0
     public void OnPlayerDeath()
     {
         if (!isDead && deathPanel != null)
         {
             isDead = true;
-            deathPanel.SetActive(true); // Muestra el panel
-            // Aqu� puedes agregar m�s l�gica, como pausar el juego
+            deathPanel.SetActive(true);
+            Time.timeScale = 0f; // Pausa el juego
         }
+    }
+
+    // 🔹 Botón: volver al menú
+    public void Volver()
+    {
+        Time.timeScale = 1f; // Reanuda el tiempo
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    // 🔹 Botón: reiniciar nivel actual
+    public void Reiniciar()
+    {
+        Time.timeScale = 1f; // Reanuda el tiempo
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
