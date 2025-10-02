@@ -2155,6 +2155,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8930736454929183827, guid: 2250d8377146d1f4199af2f10b9471b8, type: 3}
   m_PrefabInstance: {fileID: 1163011476}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1163011478 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7412027770981399055, guid: 2250d8377146d1f4199af2f10b9471b8, type: 3}
+  m_PrefabInstance: {fileID: 1163011476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1434814694
 GameObject:
   m_ObjectHideFlags: 0
@@ -2280,6 +2285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
+  gameOverPrefab: {fileID: 1163011478}
   heartPrefab: {fileID: 6578524001275508599, guid: dd2690dcc4b45bc4da61cbaff73cccc9, type: 3}
   heartsContainer: {fileID: 1163011477}
 --- !u!1 &1611927770

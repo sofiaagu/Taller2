@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic;
+using System.Collections.Generic; 
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
     [Header("Vida")]
     public int maxHealth = 5;
     public int currentHealth;
+
+    [Header("UI de Game Over")]
+    public GameObject gameOverPrefab;
+    private GameObject gameOverPanel;
 
     [Header("UI de Vida")]
     public GameObject heartPrefab;       // Prefab del corazón
@@ -30,14 +34,15 @@ public class GameManager : MonoBehaviour
     // ------------------------
     void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (Instance == null)
         {
-            Destroy(gameObject);   // Evita duplicados
-            return;
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Esto hace que persista entre escenas
         }
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        else
+        {
+            Destroy(gameObject); // Evita duplicados
+        }
 
         // Suscribir evento al cargar escenas
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -55,6 +60,9 @@ public class GameManager : MonoBehaviour
         // Crear corazones si hay un Canvas en la primera escena
         if (heartsContainer != null)
             CrearHeartsUI();
+
+        if (gameOverPanel != null)
+            gameOverPanel.SetActive(false);
     }
 
     // ------------------------
@@ -67,13 +75,15 @@ public class GameManager : MonoBehaviour
         if (container != null)
         {
             heartsContainer = container.transform;
-
-            // Regenerar la UI
             CrearHeartsUI();
         }
-        else
+
+        // Buscar el panel Game Over de esta escena
+        GameObject panel = GameObject.Find("gameOverPanel");
+        if (panel != null)
         {
-            Debug.LogWarning("No se encontró HeartsContainer en la escena " + scene.name);
+            gameOverPanel = panel;
+            gameOverPanel.SetActive(false); // siempre inicia oculto
         }
     }
 
@@ -85,13 +95,42 @@ public class GameManager : MonoBehaviour
         currentHealth -= amount;
         if (currentHealth < 0) currentHealth = 0;
 
+        // ✅ Actualizar corazones en UI
         ActualizarUI();
 
         if (currentHealth <= 0)
         {
-            Debug.Log("Game Over");
-            // Aquí podrías cargar escena de derrota o reiniciar
+            // Animación de muerte
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                Animator anim = player.GetComponent<Animator>();
+                if (anim != null)
+                {
+                    // Usa el nombre EXACTO de tu parámetro en el Animator
+                    anim.SetTrigger("die");
+                }
+            }
+
+            // Mostrar Game Over después de un pequeño retraso
+            Invoke(nameof(GameOver), 1.5f);
         }
+    }
+
+    public void GameOver()
+    {
+        if (gameOverPanel == null)
+        {
+            // Instanciar dentro del Canvas
+            Canvas canvas = FindFirstObjectByType<Canvas>();
+            if (canvas != null && gameOverPrefab != null)
+            {
+                gameOverPanel = Instantiate(gameOverPrefab, canvas.transform);
+            }
+        }
+
+        gameOverPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     private void CrearHeartsUI()
@@ -128,6 +167,8 @@ public class GameManager : MonoBehaviour
     {
         return currentHealth;
     }
+
+   
 
     // ------------------------
     // Tiempo y puntaje
