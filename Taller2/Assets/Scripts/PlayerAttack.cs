@@ -6,29 +6,31 @@ public class PlayerAttack : MonoBehaviour
 
     [Header("Ataque")]
     public KeyCode attackKey = KeyCode.K;   // Tecla para atacar
+    public GameObject espadaHitbox;         // Asigna tu Empty con collider en el Inspector
     private bool isAttacking = false;
+
     void Start()
     {
         animator = GetComponent<Animator>();
+        espadaHitbox.SetActive(false); // Al inicio desactivado
     }
 
     void Update()
     {
-        // Siempre puedes atacar aunque no haya escorpión
         if (Input.GetKeyDown(attackKey))
         {
             animator.SetTrigger("attack");
             isAttacking = true;
+            StartCoroutine(ActivarHitbox());
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private System.Collections.IEnumerator ActivarHitbox()
     {
-        // Si el jugador está tocando un escorpión y presiona la tecla
-        if (collision.gameObject.CompareTag("Scorpion") && Input.GetKeyDown(attackKey))
-        {
-            Destroy(collision.gameObject, 0.5f); // Destruye el escorpión después de la animación
-            isAttacking = false;
-        }
+        yield return new WaitForSeconds(0.2f);
+        espadaHitbox.SetActive(true); // Activa el collider
+        yield return new WaitForSeconds(0.3f); // tiempo de golpe (ajústalo al largo de la animación)
+        espadaHitbox.SetActive(false); // Desactiva después
+        isAttacking = false;
     }
 }
