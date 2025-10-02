@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ab7d3a8c2a5e52c4a90f725e07e01ddc
+guid: 6e869562ac503044bb2cc3edf7aa9d73
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2153646289433819626
-    second: vidas_0
+      213: 1591146245915968570
+    second: vidas 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WindowsStoreApps
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: vidas_0
+      name: vidas 1_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 12
-        width: 442
-        height: 442
+        x: 27
+        y: 19
+        width: 493
+        height: 422
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ae97a85c3e943ed10800000000000000
-      internalID: 2153646289433819626
+      spriteID: a3484859413e41610800000000000000
+      internalID: 1591146245915968570
       vertices: []
       indices: 
       edges: []
@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      vidas 1_0: 1591146245915968570
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
