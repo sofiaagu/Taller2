@@ -2568,7 +2568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &389912416
 AudioListener:
   m_ObjectHideFlags: 0
@@ -11448,7 +11448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
-  heartPrefab: {fileID: 6578524001275508599, guid: dd2690dcc4b45bc4da61cbaff73cccc9, type: 3}
+  heartPrefab: {fileID: 6673186553264186684, guid: f7d1280d949df3746bbfe8a5030b88b0, type: 3}
   heartsContainer: {fileID: 815947075}
 --- !u!4 &1862978163
 Transform:
