@@ -3418,6 +3418,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: scorpion-black-0
       objectReference: {fileID: 0}
+    - target: {fileID: 3893935001880704423, guid: 41c112f585769074ebd97b509761044a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.23544203
+      objectReference: {fileID: 0}
+    - target: {fileID: 3893935001880704423, guid: 41c112f585769074ebd97b509761044a, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.011960469
+      objectReference: {fileID: 0}
     - target: {fileID: 7571639496278645994, guid: 41c112f585769074ebd97b509761044a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.7607409
