@@ -57,6 +57,12 @@ public class GameManager : MonoBehaviour
     // ------------------------
     // Configuración Singleton
     // ------------------------
+    public void salir()
+    {
+        Debug.Log("Saliendo del juego");
+        Application.Quit();
+    }
+
     void Awake()
     {
         if (Instance == null)

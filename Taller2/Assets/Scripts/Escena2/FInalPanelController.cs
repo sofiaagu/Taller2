@@ -7,6 +7,12 @@ public class GameOverPanelController : MonoBehaviour
     public GameObject panelPrefab; // Prefab que se instanciará sobre el Canvas
     private GameObject panelInstance;
 
+
+    public void salir()
+    {
+        Debug.Log("Saliendo del juego");
+        Application.Quit();
+    }
     void Start()
     {
         // Si usas el panel directamente en la escena
@@ -77,6 +83,7 @@ public class GameOverPanelController : MonoBehaviour
         Debug.Log("❌ Datos de Game Over guardados en: " + path);
     }
 }
+
 [System.Serializable]
 public class GameOverData
 {
