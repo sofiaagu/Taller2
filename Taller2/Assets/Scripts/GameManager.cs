@@ -140,6 +140,7 @@ public class GameManager : MonoBehaviour
 
             case 1: // Escena 1
                 StartCoroutine(PlayMusicWithFade(scene1Music));
+                audioSource.volume = 0.2f;
                 break;
 
             case 2: // Escena 2
