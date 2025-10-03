@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class EspadaHitbox : MonoBehaviour
 {
-    public int damage = 1;
+    public int damage = 1; // Daño que hace la espada
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Scorpion"))
+        if (other.CompareTag("Scorpion")) 
         {
-            Debug.Log("Golpeaste al escorpión!");
-            Destroy(other.gameObject, 0.2f); // destruye con pequeño delay (animación de golpe)
-            // O también: other.GetComponent<Scorpion>().TakeDamage(damage);
+            ScorpionAI scorpion = other.GetComponent<ScorpionAI>();
+            if (scorpion != null)
+            {
+                scorpion.TakeDamage(damage); // Llama al método de ScorpionAI
+            }
         }
     }
 }

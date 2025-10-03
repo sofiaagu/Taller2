@@ -1,18 +1,27 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
     private Animator animator;
+    public AudioClip AttackSound;   // Sonido de ataque (desde el inspector)
+    private AudioSource audioSource;
 
     [Header("Ataque")]
     public KeyCode attackKey = KeyCode.K;   // Tecla para atacar
-    public GameObject espadaHitbox;         // Asigna tu Empty con collider en el Inspector
+    public GameObject espadaHitbox;         // Empty con collider2D como Trigger
     private bool isAttacking = false;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         espadaHitbox.SetActive(false); // Al inicio desactivado
+
+        // Si el jugador no tiene AudioSource, se crea uno
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -21,6 +30,11 @@ public class PlayerAttack : MonoBehaviour
         {
             animator.SetTrigger("attack");
             isAttacking = true;
+
+            // ðŸ”Š Reproducir sonido de ataque
+            if (AttackSound != null)
+                audioSource.PlayOneShot(AttackSound);
+
             StartCoroutine(ActivarHitbox());
         }
     }
@@ -29,8 +43,8 @@ public class PlayerAttack : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         espadaHitbox.SetActive(true); // Activa el collider
-        yield return new WaitForSeconds(0.3f); // tiempo de golpe (ajústalo al largo de la animación)
-        espadaHitbox.SetActive(false); // Desactiva después
+        yield return new WaitForSeconds(0.3f);
+        espadaHitbox.SetActive(false); // Desactiva despuÃ©s
         isAttacking = false;
     }
 }

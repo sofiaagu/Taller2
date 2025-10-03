@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: b2f423484d3a45f4fbe762efca830dc3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - AttackSound: {instanceID: 0}
+  - espadaHitbox: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

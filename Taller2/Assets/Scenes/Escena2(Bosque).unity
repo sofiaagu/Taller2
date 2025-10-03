@@ -399,6 +399,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076382312203498632, guid: abfbd53f892c44e47836f114893fb84d, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3111,6 +3115,8 @@ MonoBehaviour:
   damage: 1
   damageCooldown: 1
   knockbackForce: 3
+  maxHealth: 3
+  hurtSound: {fileID: 8300000, guid: 850139ad34e6c044e9a35e500e146ba0, type: 3}
 --- !u!61 &510042693
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3480,6 +3486,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076382312203498632, guid: abfbd53f892c44e47836f114893fb84d, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3838,6 +3848,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 277070598064469484, guid: 41c112f585769074ebd97b509761044a, type: 3}
+      propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 850139ad34e6c044e9a35e500e146ba0, type: 3}
     - target: {fileID: 2054660936150430900, guid: 41c112f585769074ebd97b509761044a, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -3971,6 +3985,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076382312203498632, guid: abfbd53f892c44e47836f114893fb84d, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4033,6 +4051,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076382312203498632, guid: abfbd53f892c44e47836f114893fb84d, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4269,6 +4291,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076382312203498632, guid: abfbd53f892c44e47836f114893fb84d, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4339,6 +4365,8 @@ MonoBehaviour:
   damage: 1
   damageCooldown: 1
   knockbackForce: 3
+  maxHealth: 3
+  hurtSound: {fileID: 8300000, guid: 850139ad34e6c044e9a35e500e146ba0, type: 3}
 --- !u!61 &784511126
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4490,6 +4518,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 89050347}
     m_Modifications:
+    - target: {fileID: 1228011781510570036, guid: 26a294b04494ac94fb8278e751cfaf3c, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 62bfc496737dd5747b613a80177f84bf, type: 3}
     - target: {fileID: 4762013354001769578, guid: 26a294b04494ac94fb8278e751cfaf3c, type: 3}
       propertyPath: m_Name
       value: Coin2
@@ -5366,6 +5398,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076382312203498632, guid: abfbd53f892c44e47836f114893fb84d, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5955,6 +5991,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076382312203498632, guid: abfbd53f892c44e47836f114893fb84d, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10788,6 +10828,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08db07b00811e6642af55b8cf227c17d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoAmbienteLava: {fileID: 0}
+  sonidoContacto: {fileID: 0}
+  sonidoPisoLava: {fileID: 0}
+  volumenAmbiente: 0.3
+  volumenContacto: 1
 --- !u!1 &1330459343
 GameObject:
   m_ObjectHideFlags: 0
@@ -11018,6 +11063,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 89050347}
     m_Modifications:
+    - target: {fileID: 1228011781510570036, guid: 26a294b04494ac94fb8278e751cfaf3c, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 62bfc496737dd5747b613a80177f84bf, type: 3}
     - target: {fileID: 4762013354001769578, guid: 26a294b04494ac94fb8278e751cfaf3c, type: 3}
       propertyPath: m_Name
       value: Coin2 (2)
@@ -11602,6 +11651,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 89050347}
     m_Modifications:
+    - target: {fileID: 1228011781510570036, guid: 26a294b04494ac94fb8278e751cfaf3c, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 62bfc496737dd5747b613a80177f84bf, type: 3}
     - target: {fileID: 4762013354001769578, guid: 26a294b04494ac94fb8278e751cfaf3c, type: 3}
       propertyPath: m_Name
       value: Coin2 (1)
@@ -12182,6 +12235,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08db07b00811e6642af55b8cf227c17d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoAmbienteLava: {fileID: 0}
+  sonidoContacto: {fileID: 0}
+  sonidoPisoLava: {fileID: 0}
+  volumenAmbiente: 0.3
+  volumenContacto: 1
 --- !u!61 &1553859763
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12410,6 +12468,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1874997513}
     m_Modifications:
+    - target: {fileID: -2830667115601744538, guid: 4444d3594845c86419a52c7bb6e749f3, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c6cb9b34a35d3645b6b43a6b27da507, type: 3}
     - target: {fileID: 2344763851248131275, guid: 4444d3594845c86419a52c7bb6e749f3, type: 3}
       propertyPath: m_Name
       value: Coin3 (1)
@@ -12785,6 +12847,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -1628462427
       objectReference: {fileID: 0}
+    - target: {fileID: 8449849457192054318, guid: 2406d7830551d2e418961fd425bf253d, type: 3}
+      propertyPath: AttackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e1a0bf85e97fa5548b042144d4fb981c, type: 3}
     - target: {fileID: 8449849457192054318, guid: 2406d7830551d2e418961fd425bf253d, type: 3}
       propertyPath: espadaHitbox
       value: 
@@ -15393,6 +15459,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076382312203498632, guid: abfbd53f892c44e47836f114893fb84d, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15498,6 +15568,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1874997513}
     m_Modifications:
+    - target: {fileID: -2830667115601744538, guid: 4444d3594845c86419a52c7bb6e749f3, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c6cb9b34a35d3645b6b43a6b27da507, type: 3}
     - target: {fileID: 2344763851248131275, guid: 4444d3594845c86419a52c7bb6e749f3, type: 3}
       propertyPath: m_Name
       value: Coin3
@@ -15778,6 +15852,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076382312203498632, guid: abfbd53f892c44e47836f114893fb84d, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15840,6 +15918,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076382312203498632, guid: abfbd53f892c44e47836f114893fb84d, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16631,6 +16713,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076382312203498632, guid: abfbd53f892c44e47836f114893fb84d, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16867,6 +16953,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076382312203498632, guid: abfbd53f892c44e47836f114893fb84d, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16929,6 +17019,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076382312203498632, guid: abfbd53f892c44e47836f114893fb84d, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17056,6 +17150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08db07b00811e6642af55b8cf227c17d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoAmbienteLava: {fileID: 0}
+  sonidoContacto: {fileID: 0}
+  sonidoPisoLava: {fileID: 0}
+  volumenAmbiente: 0.3
+  volumenContacto: 1
 --- !u!61 &2035088401
 BoxCollider2D:
   m_ObjectHideFlags: 0

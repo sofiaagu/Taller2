@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2830667115601744538, guid: 4444d3594845c86419a52c7bb6e749f3, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c6cb9b34a35d3645b6b43a6b27da507, type: 3}
     - target: {fileID: 2344763851248131275, guid: 4444d3594845c86419a52c7bb6e749f3, type: 3}
       propertyPath: m_Name
       value: Coin3 (2)
@@ -271,7 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 1
   coinValue: 3
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 62bfc496737dd5747b613a80177f84bf, type: 3}
 --- !u!114 &229324945 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5877596412438721798, guid: 2250d8377146d1f4199af2f10b9471b8, type: 3}
@@ -375,6 +379,7 @@ MonoBehaviour:
   timerMinutes: {fileID: 1029587664}
   timerSeconds: {fileID: 737390452}
   timerSeconds100: {fileID: 229324945}
+  stopTime: 0
 --- !u!4 &373092722
 Transform:
   m_ObjectHideFlags: 0
@@ -469,7 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 0
   coinValue: 1
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
 --- !u!1001 &464158992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -534,6 +539,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8449849457192054318, guid: 2406d7830551d2e418961fd425bf253d, type: 3}
+      propertyPath: AttackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e1a0bf85e97fa5548b042144d4fb981c, type: 3}
     - target: {fileID: 8464345094828627013, guid: 2406d7830551d2e418961fd425bf253d, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -858,6 +867,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08db07b00811e6642af55b8cf227c17d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoAmbienteLava: {fileID: 8300000, guid: 0a51fab09a09291439039b3ce08fae4e, type: 3}
+  sonidoContacto: {fileID: 8300000, guid: 555dadf095cb6c14788b0995979ca2a4, type: 3}
+  sonidoPisoLava: {fileID: 8300000, guid: ab971b61db1c52847978a9154d10edef, type: 3}
+  volumenAmbiente: 0
+  volumenContacto: 1
 --- !u!1001 &509151677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -937,7 +951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 0
   coinValue: 1
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
 --- !u!1001 &730870374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1017,7 +1031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 0
   coinValue: 1
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
 --- !u!114 &737390452 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3053374440626340909, guid: 2250d8377146d1f4199af2f10b9471b8, type: 3}
@@ -1120,6 +1134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08db07b00811e6642af55b8cf227c17d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoAmbienteLava: {fileID: 8300000, guid: 0a51fab09a09291439039b3ce08fae4e, type: 3}
+  sonidoContacto: {fileID: 8300000, guid: 555dadf095cb6c14788b0995979ca2a4, type: 3}
+  sonidoPisoLava: {fileID: 8300000, guid: ab971b61db1c52847978a9154d10edef, type: 3}
+  volumenAmbiente: 0.04
+  volumenContacto: 1
 --- !u!1001 &996475850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1199,7 +1218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 0
   coinValue: 1
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
 --- !u!1 &1007844875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,6 +1310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08db07b00811e6642af55b8cf227c17d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoAmbienteLava: {fileID: 8300000, guid: 0a51fab09a09291439039b3ce08fae4e, type: 3}
+  sonidoContacto: {fileID: 8300000, guid: 555dadf095cb6c14788b0995979ca2a4, type: 3}
+  sonidoPisoLava: {fileID: 8300000, guid: ab971b61db1c52847978a9154d10edef, type: 3}
+  volumenAmbiente: 0
+  volumenContacto: 1
 --- !u!114 &1029587664 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7183050365420577272, guid: 2250d8377146d1f4199af2f10b9471b8, type: 3}
@@ -1452,7 +1476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 0
   coinValue: 1
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
 --- !u!1001 &1081093373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1532,7 +1556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 0
   coinValue: 1
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
 --- !u!1 &1148368231
 GameObject:
   m_ObjectHideFlags: 0
@@ -4196,7 +4220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 0
   coinValue: 1
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
 --- !u!1001 &1397566494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4276,7 +4300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 0
   coinValue: 1
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
 --- !u!114 &1442364336 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4824924872044322291, guid: 2250d8377146d1f4199af2f10b9471b8, type: 3}
@@ -4296,6 +4320,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2830667115601744538, guid: 4444d3594845c86419a52c7bb6e749f3, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c6cb9b34a35d3645b6b43a6b27da507, type: 3}
     - target: {fileID: 2344763851248131275, guid: 4444d3594845c86419a52c7bb6e749f3, type: 3}
       propertyPath: m_Name
       value: Coin3 (3)
@@ -4524,7 +4552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 0
   coinValue: 1
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
 --- !u!1 &1661807760
 GameObject:
   m_ObjectHideFlags: 0
@@ -4570,6 +4598,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08db07b00811e6642af55b8cf227c17d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoAmbienteLava: {fileID: 8300000, guid: 0a51fab09a09291439039b3ce08fae4e, type: 3}
+  sonidoContacto: {fileID: 8300000, guid: 555dadf095cb6c14788b0995979ca2a4, type: 3}
+  sonidoPisoLava: {fileID: 8300000, guid: ab971b61db1c52847978a9154d10edef, type: 3}
+  volumenAmbiente: 0.073
+  volumenContacto: 1
 --- !u!61 &1661807763
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4740,6 +4773,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08db07b00811e6642af55b8cf227c17d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoAmbienteLava: {fileID: 8300000, guid: 0a51fab09a09291439039b3ce08fae4e, type: 3}
+  sonidoContacto: {fileID: 8300000, guid: 555dadf095cb6c14788b0995979ca2a4, type: 3}
+  sonidoPisoLava: {fileID: 8300000, guid: ab971b61db1c52847978a9154d10edef, type: 3}
+  volumenAmbiente: 0
+  volumenContacto: 1
 --- !u!61 &1717084634
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4794,6 +4832,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1228011781510570036, guid: 26a294b04494ac94fb8278e751cfaf3c, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 62bfc496737dd5747b613a80177f84bf, type: 3}
     - target: {fileID: 4762013354001769578, guid: 26a294b04494ac94fb8278e751cfaf3c, type: 3}
       propertyPath: m_Name
       value: Coin2 (3)
@@ -4942,6 +4984,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08db07b00811e6642af55b8cf227c17d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoAmbienteLava: {fileID: 8300000, guid: 0a51fab09a09291439039b3ce08fae4e, type: 3}
+  sonidoContacto: {fileID: 8300000, guid: 555dadf095cb6c14788b0995979ca2a4, type: 3}
+  sonidoPisoLava: {fileID: 8300000, guid: ab971b61db1c52847978a9154d10edef, type: 3}
+  volumenAmbiente: 0.067
+  volumenContacto: 1
 --- !u!1001 &1966214648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4950,6 +4997,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2830667115601744538, guid: 4444d3594845c86419a52c7bb6e749f3, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c6cb9b34a35d3645b6b43a6b27da507, type: 3}
     - target: {fileID: 2344763851248131275, guid: 4444d3594845c86419a52c7bb6e749f3, type: 3}
       propertyPath: m_Name
       value: Coin3 (4)
@@ -5121,6 +5172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08db07b00811e6642af55b8cf227c17d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoAmbienteLava: {fileID: 8300000, guid: 0a51fab09a09291439039b3ce08fae4e, type: 3}
+  sonidoContacto: {fileID: 8300000, guid: 555dadf095cb6c14788b0995979ca2a4, type: 3}
+  sonidoPisoLava: {fileID: 8300000, guid: ab971b61db1c52847978a9154d10edef, type: 3}
+  volumenAmbiente: 0
+  volumenContacto: 1
 --- !u!1001 &2058606495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5200,7 +5256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 0
   coinValue: 1
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
 --- !u!1001 &2062013745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5280,7 +5336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 0
   coinValue: 1
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
 --- !u!1001 &2102575688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5360,7 +5416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 0
   coinValue: 1
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
 --- !u!1001 &935739679007120757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5560,7 +5616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 1
   coinValue: 3
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 62bfc496737dd5747b613a80177f84bf, type: 3}
 --- !u!1001 &8792453999929775559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5640,7 +5696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 0
   coinValue: 1
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 5523667d08ef53e419b70ba16a68b24f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

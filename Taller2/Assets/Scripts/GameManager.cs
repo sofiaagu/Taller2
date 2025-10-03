@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic; 
+using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +29,16 @@ public class GameManager : MonoBehaviour
     private int scoreCoin3 = 0;
 
     public int TotalScore { get; set; }
+
+    // ------------------------
+    // 🎵 AUDIO
+    // ------------------------
+    [Header("Audio")]
+    public AudioSource audioSource;   // AudioSource que reproducirá la música
+    public AudioClip menuMusic;       // Música del menú
+    public AudioClip scene1Music;     // Música de la escena 1
+    public AudioClip scene2Music;     // Música de la escena 2
+    public float fadeDuration = 1.5f; // Duración del fade in/out en segundos
 
     // ------------------------
     // Configuración Singleton
@@ -63,6 +74,16 @@ public class GameManager : MonoBehaviour
 
         if (gameOverPanel != null)
             gameOverPanel.SetActive(false);
+
+        // 🎵 Configuración inicial de Audio
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+
+        audioSource.loop = true;
+        audioSource.playOnAwake = false;
+
+        // 🎵 Música inicial con fade
+        StartCoroutine(PlayMusicWithFade(menuMusic));
     }
 
     // ------------------------
@@ -85,6 +106,52 @@ public class GameManager : MonoBehaviour
             gameOverPanel = panel;
             gameOverPanel.SetActive(false); // siempre inicia oculto
         }
+
+        // 🎵 Cambiar música según escena con fade
+        switch (scene.buildIndex)
+        {
+            case 0: // Menú
+                StartCoroutine(PlayMusicWithFade(menuMusic));
+                break;
+
+            case 1: // Escena 1
+                StartCoroutine(PlayMusicWithFade(scene1Music));
+                break;
+
+            case 2: // Escena 2
+                StartCoroutine(PlayMusicWithFade(scene2Music));
+                break;
+        }
+    }
+
+    // 🎵 Corrutina para cambiar música suavemente
+    private IEnumerator PlayMusicWithFade(AudioClip newClip)
+    {
+        if (newClip == null) yield break;
+
+        // Si ya está sonando esa música, no hacer nada
+        if (audioSource.clip == newClip) yield break;
+
+        // Fade out
+        float startVolume = audioSource.volume;
+        for (float t = 0; t < fadeDuration; t += Time.unscaledDeltaTime)
+        {
+            audioSource.volume = Mathf.Lerp(startVolume, 0f, t / fadeDuration);
+            yield return null;
+        }
+        audioSource.volume = 0f;
+
+        // Cambiar música
+        audioSource.clip = newClip;
+        audioSource.Play();
+
+        // Fade in
+        for (float t = 0; t < fadeDuration; t += Time.unscaledDeltaTime)
+        {
+            audioSource.volume = Mathf.Lerp(0f, startVolume, t / fadeDuration);
+            yield return null;
+        }
+        audioSource.volume = startVolume;
     }
 
     // ------------------------
@@ -107,7 +174,6 @@ public class GameManager : MonoBehaviour
                 Animator anim = player.GetComponent<Animator>();
                 if (anim != null)
                 {
-                    // Usa el nombre EXACTO de tu parámetro en el Animator
                     anim.SetTrigger("die");
                 }
             }
@@ -119,7 +185,6 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        // Buscar el controlador del panel en la escena actual
         PlayerDeathPanel panelController = FindFirstObjectByType<PlayerDeathPanel>();
 
         if (panelController != null)
@@ -136,7 +201,6 @@ public class GameManager : MonoBehaviour
 
     private void CrearHeartsUI()
     {
-        // Limpiar corazones previos
         foreach (var h in hearts)
         {
             if (h != null)
@@ -144,14 +208,12 @@ public class GameManager : MonoBehaviour
         }
         hearts.Clear();
 
-        // Crear corazones según vida máxima
         for (int i = 0; i < maxHealth; i++)
         {
             GameObject newHeart = Instantiate(heartPrefab, heartsContainer);
             hearts.Add(newHeart);
         }
 
-        // Actualizar según vida actual
         ActualizarUI();
     }
 
@@ -168,8 +230,6 @@ public class GameManager : MonoBehaviour
     {
         return currentHealth;
     }
-
-   
 
     // ------------------------
     // Tiempo y puntaje
@@ -197,7 +257,6 @@ public class GameManager : MonoBehaviour
         TotalScore += Coin3;
     }
 
-    // Propiedades
     public float GlobalTime { get => globalTime; set => globalTime = value; }
     public int ScoreCoin { get => scoreCoin; set => scoreCoin = value; }
     public int ScoreCoin2 { get => scoreCoin2; set => scoreCoin2 = value; }

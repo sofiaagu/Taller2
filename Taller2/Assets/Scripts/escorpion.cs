@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ScorpionAI : MonoBehaviour
 {
@@ -6,20 +6,36 @@ public class ScorpionAI : MonoBehaviour
     private bool movingRight = true;
 
     [Header("Movimiento")]
-    public float speed = 1f;          // Velocidad del escorpi�n
-    public float moveDistance = 0.5f; // Distancia m�xima desde el punto inicial
+    public float speed = 1f;          // Velocidad del escorpión
+    public float moveDistance = 0.5f; // Distancia máxima desde el punto inicial
 
-    [Header("Da�o")]
+    [Header("Daño al jugador")]
     public int damage = 1;
-    public float damageCooldown = 1f; // tiempo entre da�os consecutivos
+    public float damageCooldown = 1f; // tiempo entre daños consecutivos
     private float lastDamageTime = -999f;
 
     [Header("Knockback")]
     public float knockbackForce = 3f;
 
+    [Header("Vida del Escorpión")]
+    public int maxHealth = 3;     // puedes ajustarlo en el inspector
+    private int currentHealth;
+
+    [Header("Audio")]
+    public AudioClip hurtSound;   // Sonido al recibir daño
+    private AudioSource audioSource;
+
     void Start()
     {
-        startPos = transform.position; // Guardar posici�n inicial
+        startPos = transform.position; // Guardar posición inicial
+        currentHealth = maxHealth;
+
+        // Buscar o crear un AudioSource
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     void Update()
@@ -46,6 +62,7 @@ public class ScorpionAI : MonoBehaviour
         scale.x *= -1; // voltear sprite
         transform.localScale = scale;
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -55,11 +72,32 @@ public class ScorpionAI : MonoBehaviour
             PlayerMove player = collision.gameObject.GetComponent<PlayerMove>();
             if (player != null)
             {
-                // Calcula direcci�n de knockback (desde enemigo hacia jugador)
+                // Calcula dirección de knockback (desde enemigo hacia jugador)
                 Vector2 knockDir = (collision.transform.position - transform.position).normalized;
                 player.TakeDamage(damage, knockDir, knockbackForce);
                 lastDamageTime = Time.time;
             }
         }
+    }
+
+    // 👉 Método para recibir daño desde PlayerAttack
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+
+        // Reproducir sonido
+        if (hurtSound != null)
+            audioSource.PlayOneShot(hurtSound);
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("Escorpión muerto");
+        Destroy(gameObject);
     }
 }
