@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      calavera_0: 1284078919682861982
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -70,16 +70,28 @@ public class Timer : MonoBehaviour
     void Update()
     {
         timerTime = stopTime + (Time.time - startTime);
-        int minutesInt = (int)timerTime / 60;
-        int secondsInt = (int)timerTime % 60;
-        int seconds100Int = (int)(Mathf.Floor((timerTime - (secondsInt + minutesInt * 60)) * 100));
 
         if (isRunning)
         {
-            timerMinutes.text = (minutesInt < 10) ? "0" + minutesInt : minutesInt.ToString();
-            timerSeconds.text = (secondsInt < 10) ? "0" + secondsInt : secondsInt.ToString();
-            timerSeconds100.text = (seconds100Int < 10) ? "0" + seconds100Int : seconds100Int.ToString();
+            string formatted = FormatTime(timerTime);
+            string[] parts = formatted.Split(':');
+            timerMinutes.text = parts[0];
+            timerSeconds.text = parts[1];
+            timerSeconds100.text = parts[2];
         }
+    }
+
+
+    public static string FormatTime(float t)
+    {
+        int minutesInt = (int)t / 60;
+        int secondsInt = (int)t % 60;
+        int seconds100Int = (int)((t - (minutesInt * 60 + secondsInt)) * 100);
+
+        return
+            (minutesInt < 10 ? "0" + minutesInt : minutesInt.ToString()) + ":" +
+            (secondsInt < 10 ? "0" + secondsInt : secondsInt.ToString()) + ":" +
+            (seconds100Int < 10 ? "0" + seconds100Int : seconds100Int.ToString());
     }
     public void ResetTimer()
     {

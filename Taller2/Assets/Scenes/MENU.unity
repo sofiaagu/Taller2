@@ -1372,6 +1372,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593476851}
   m_CullTransparentMesh: 1
+--- !u!1 &798166171 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3617550700176703424, guid: 2250d8377146d1f4199af2f10b9471b8, type: 3}
+  m_PrefabInstance: {fileID: 1163011476}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &927177111
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,6 +2136,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3617550700176703424, guid: 2250d8377146d1f4199af2f10b9471b8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4273020987330324352, guid: 2250d8377146d1f4199af2f10b9471b8, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -2220,7 +2229,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4093560796348811827, guid: 2250d8377146d1f4199af2f10b9471b8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2250d8377146d1f4199af2f10b9471b8, type: 3}
@@ -2572,8 +2582,16 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   gameOverPrefab: {fileID: 1163011478}
+  victoryPanel: {fileID: 798166171}
   heartPrefab: {fileID: 6673186553264186684, guid: f7d1280d949df3746bbfe8a5030b88b0, type: 3}
   heartsContainer: {fileID: 1163011477}
+  livesText: {fileID: 0}
+  timeText: {fileID: 0}
+  itemsText: {fileID: 0}
+  totalItemsText: {fileID: 0}
+  scoreText: {fileID: 0}
+  itemsCollected: 0
+  totalItems: 10
   audioSource: {fileID: 1970737557}
   menuMusic: {fileID: 8300000, guid: 46a7c73923d758049bbb9d544f68a2e8, type: 3}
   scene1Music: {fileID: 8300000, guid: 6955885b6dd52ca47aedd4d2aabc11f1, type: 3}

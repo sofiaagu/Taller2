@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverPrefab;
     private GameObject gameOverPanel;
 
+    [Header("Panel de Victoria")]
+    public GameObject victoryPanel;
+
+
     [Header("UI de Vida")]
     public GameObject heartPrefab;       // Prefab del corazón
     public Transform heartsContainer;    // Contenedor de corazones en el Canvas
@@ -24,10 +28,20 @@ public class GameManager : MonoBehaviour
     private List<GameObject> hearts = new List<GameObject>();
 
     [Header("Puntaje")]
-    private int scoreCoin = 0;
-    private int scoreCoin2 = 0;
-    private int scoreCoin3 = 0;
+    public int scoreCoin = 0;
+    public int scoreCoin2 = 0;
+    public int scoreCoin3 = 0;
 
+    [Header("UI Victory Panel")]
+    public TMPro.TMP_Text livesText;
+    public TMPro.TMP_Text timeText;
+    public TMPro.TMP_Text itemsText;
+    public TMPro.TMP_Text totalItemsText;
+    public TMPro.TMP_Text scoreText;
+
+    [Header("Items")]
+    public int itemsCollected = 0;
+    public int totalItems = 10;
     public int TotalScore { get; set; }
 
     // ------------------------
@@ -84,6 +98,10 @@ public class GameManager : MonoBehaviour
 
         // 🎵 Música inicial con fade
         StartCoroutine(PlayMusicWithFade(menuMusic));
+
+        victoryPanel = GameObject.Find("VictoryPanel");
+        if (victoryPanel != null)
+            victoryPanel.SetActive(false); // asegurarse de que empiece oculto
     }
 
     // ------------------------
@@ -105,6 +123,12 @@ public class GameManager : MonoBehaviour
         {
             gameOverPanel = panel;
             gameOverPanel.SetActive(false); // siempre inicia oculto
+        }
+
+        victoryPanel = GameObject.Find("VictoryPanel");
+        if (victoryPanel != null)
+        {
+            victoryPanel.SetActive(false); // siempre inicia oculto
         }
 
         // 🎵 Cambiar música según escena con fade
@@ -226,6 +250,61 @@ public class GameManager : MonoBehaviour
         }
     }
 
+  
+
+    public void Victory()
+    {
+        if (victoryPanel != null)
+
+        {
+            Timer timer = FindFirstObjectByType<Timer>();
+            if (timer != null)
+            {
+                timer.TimerStop();
+                float sceneTime = timer.stopTime;
+                TotalTime(sceneTime); // acumular al global
+            }
+            victoryPanel.SetActive(true);
+
+            // 🔹 Buscar referencias dentro del VictoryPanel
+            livesText = victoryPanel.transform.Find("LivesText")?.GetComponent<TMPro.TMP_Text>();
+            timeText = victoryPanel.transform.Find("TimeText")?.GetComponent<TMPro.TMP_Text>();
+            var coin1Text = victoryPanel.transform.Find("Coin1Text")?.GetComponent<TMPro.TMP_Text>();
+            var coin2Text = victoryPanel.transform.Find("Coin2Text")?.GetComponent<TMPro.TMP_Text>();
+            var coin3Text = victoryPanel.transform.Find("Coin3Text")?.GetComponent<TMPro.TMP_Text>();
+            var totalText = victoryPanel.transform.Find("TotalText")?.GetComponent<TMPro.TMP_Text>();
+
+            // 🔹 Actualizar textos
+            if (livesText != null)
+                livesText.text = currentHealth.ToString();
+
+            if (timeText != null)
+                timeText.text = Timer.FormatTime(globalTime);
+
+            if (coin1Text != null)
+                coin1Text.text = scoreCoin.ToString();
+
+            if (coin2Text != null)
+                coin2Text.text = scoreCoin2.ToString();
+
+            if (coin3Text != null)
+                coin3Text.text = scoreCoin3.ToString();
+
+            if (totalText != null)
+                totalText.text = (scoreCoin + scoreCoin2 + scoreCoin3).ToString();
+
+            
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró el Victory Panel en esta escena.");
+        }
+    }
+
+ 
+   
+
     public int GetCurrentHealth()
     {
         return currentHealth;
@@ -262,3 +341,4 @@ public class GameManager : MonoBehaviour
     public int ScoreCoin2 { get => scoreCoin2; set => scoreCoin2 = value; }
     public int ScoreCoin3 { get => scoreCoin3; set => scoreCoin3 = value; }
 }
+

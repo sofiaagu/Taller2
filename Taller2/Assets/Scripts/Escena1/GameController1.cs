@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class GameController1 : MonoBehaviour
@@ -20,13 +20,27 @@ public class GameController1 : MonoBehaviour
             TextTotal.text = GameManager.Instance.TotalScore.ToString();
         }
     }
+    public void addTime()
+    {
+        if (tiempoEscena != null)
+        {
+            // Detener el temporizador de la escena
+            tiempoEscena.TimerStop();
+            float getTimeScene = tiempoEscena.stopTime;
+
+            // Sumar el tiempo al global
+            GameManager.Instance.TotalTime(getTimeScene);
+
+            Debug.Log("Tiempo Escena 1 agregado: " + getTimeScene);
+            Debug.Log("Tiempo Global acumulado: " + GameManager.Instance.GlobalTime);
+        }
+        else
+        {
+            Debug.LogWarning("No hay referencia a Timer en GameController2.");
+        }
+
+    }
 }
 
-//    public void addTime()
-//    {
-//        tiempoEscena.TimerStop();
-//        float getTimeScene = tiempoEscena.StopTime;
-//        GameManager.Instance.TotalTime(getTimeScene);
-//        Debug.Log("Tiempo Escena 1 " + GameManager.Instance.GlobalTime);
-//    }
-//}
+
+
