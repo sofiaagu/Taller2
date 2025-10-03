@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     private int scoreCoin2 = 0;
     private int scoreCoin3 = 0;
 
-    public int TotalScore { get; private set; }
+    public int TotalScore { get; set; }
 
     // ------------------------
     // Configuración Singleton

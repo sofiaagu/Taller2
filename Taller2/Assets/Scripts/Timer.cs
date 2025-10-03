@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI timerSeconds100;
 
     private float startTime;
-    private float stopTime;
+    public float stopTime;
     private float timerTime;
     private bool isRunning = false;
 
@@ -80,5 +80,13 @@ public class Timer : MonoBehaviour
             timerSeconds.text = (secondsInt < 10) ? "0" + secondsInt : secondsInt.ToString();
             timerSeconds100.text = (seconds100Int < 10) ? "0" + seconds100Int : seconds100Int.ToString();
         }
+    }
+    public void ResetTimer()
+    {
+        stopTime = 0f;
+        // Si tienes otras variables en tu Timer, resetéalas aquí también
+        // Por ejemplo:
+        // currentTime = 0f;
+        // isRunning = true;
     }
 }
