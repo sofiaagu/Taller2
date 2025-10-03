@@ -149,11 +149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7299448822957994733, guid: 4444d3594845c86419a52c7bb6e749f3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1146197
+      value: -4.828
       objectReference: {fileID: 0}
     - target: {fileID: 7299448822957994733, guid: 4444d3594845c86419a52c7bb6e749f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5124072
+      value: -0.942
       objectReference: {fileID: 0}
     - target: {fileID: 7299448822957994733, guid: 4444d3594845c86419a52c7bb6e749f3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 1
   coinValue: 5
-  itemSound: {fileID: 8300000, guid: 62bfc496737dd5747b613a80177f84bf, type: 3}
+  itemSound: {fileID: 8300000, guid: 39c1e3bb79296a84ea9a127fb8085839, type: 3}
 --- !u!114 &229324945 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5877596412438721798, guid: 2250d8377146d1f4199af2f10b9471b8, type: 3}
@@ -6650,7 +6650,7 @@ PrefabInstance:
     - target: {fileID: 1228011781510570036, guid: 26a294b04494ac94fb8278e751cfaf3c, type: 3}
       propertyPath: itemSound
       value: 
-      objectReference: {fileID: 8300000, guid: 62bfc496737dd5747b613a80177f84bf, type: 3}
+      objectReference: {fileID: 8300000, guid: 39c1e3bb79296a84ea9a127fb8085839, type: 3}
     - target: {fileID: 4762013354001769578, guid: 26a294b04494ac94fb8278e751cfaf3c, type: 3}
       propertyPath: m_Name
       value: Coin2 (3)
@@ -7435,7 +7435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinType: 1
   coinValue: 5
-  itemSound: {fileID: 8300000, guid: 62bfc496737dd5747b613a80177f84bf, type: 3}
+  itemSound: {fileID: 8300000, guid: 39c1e3bb79296a84ea9a127fb8085839, type: 3}
 --- !u!1001 &8792453999929775559
 PrefabInstance:
   m_ObjectHideFlags: 0

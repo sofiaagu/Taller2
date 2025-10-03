@@ -3658,7 +3658,7 @@ MonoBehaviour:
   totalItems: 10
   audioSource: {fileID: 1970737557}
   menuMusic: {fileID: 8300000, guid: 46a7c73923d758049bbb9d544f68a2e8, type: 3}
-  scene1Music: {fileID: 8300000, guid: 6955885b6dd52ca47aedd4d2aabc11f1, type: 3}
+  scene1Music: {fileID: 8300000, guid: ad6b23f4e2a9d8c45afb1e37d2086f99, type: 3}
   scene2Music: {fileID: 8300000, guid: 442838a14e906514798e8431512a8a23, type: 3}
   fadeDuration: 1
 --- !u!1 &1507087801
