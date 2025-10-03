@@ -23,24 +23,6 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    //private IEnumerator ReproducirVideoYIniciar()
-    //{
-    //    // Activamos el panel del video
-    //    panelVideo.SetActive(true);
-
-    //    // Reproducimos el video
-    //    videoPlayer.Play();
-
-    //    // Esperamos a que termine el video
-    //    while (videoPlayer.isPlaying)
-    //    {
-    //        yield return null;
-    //    }
-
-    //    // Cargamos la escena del juego
-    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    //}
-
     public void salir()
     {
         Debug.Log("Saliendo del juego");
